@@ -8,8 +8,6 @@ from selenium.webdriver.support.ui import Select
 from time import sleep
 
 
-# 7_test
-@pytest.mark.skip
 def test_colour_button(driver):
     home_page = HomePage(driver)
     home_page.open()
@@ -17,19 +15,18 @@ def test_colour_button(driver):
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
-    WebDriverWait(driver, 10).until(ec.element_to_be_clickable(cart_page.shop_new_in))
+    sleep(2)
+    # WebDriverWait(driver, 10).until(ec.element_to_be_clickable(cart_page.shop_new_in))
     cart_page.shop_new_in.click()
     clothes_page = ClothesPage(driver)
     clothes_page.colour_button.click()
     assert clothes_page.colour_button.is_enabled()
 
 
-# test_8
-@pytest.mark.skip
 def test_black_colour_selected(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.all_cookies.click()
+    # home_page.all_cookies.click()
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
@@ -42,12 +39,10 @@ def test_black_colour_selected(driver):
     assert clothes_page.colour_button.text == "Colour\n(1)"
 
 
-# test_9
-@pytest.mark.skip
 def test_when_black_select_trousers_img_appear(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.all_cookies.click()
+    # home_page.all_cookies.click()
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
@@ -60,12 +55,10 @@ def test_when_black_select_trousers_img_appear(driver):
     assert clothes_page.trousers_image.is_displayed()
 
 
-# test_10
-@pytest.mark.skip
 def test_clear_all_button(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.all_cookies.click()
+    # home_page.all_cookies.click()
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
@@ -80,12 +73,10 @@ def test_clear_all_button(driver):
     assert clothes_page.colour_button.text != "Colour\n(1)"
 
 
-# test_11
-@pytest.mark.skip
 def test_showing_number_on_the_page(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.all_cookies.click()
+    # home_page.all_cookies.click()
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
@@ -99,12 +90,10 @@ def test_showing_number_on_the_page(driver):
     assert clothes_page.showing_number_of_orders.text < "65"
 
 
-# test_14
-@pytest.mark.skip
 def test_sort_price_low_to_high(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.all_cookies.click()
+    # home_page.all_cookies.click()
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
@@ -120,12 +109,10 @@ def test_sort_price_low_to_high(driver):
     assert clothes_page.brush.is_displayed()
 
 
-# test_15
-@pytest.mark.skip
 def test_read_more_less_text(driver):
     home_page = HomePage(driver)
     home_page.open()
-    home_page.all_cookies.click()
+    # home_page.all_cookies.click()
     home_page.cart_button.click()
     cart_page = CartPage(driver)
     driver.execute_script("window.scrollTo(0, 300)")
@@ -135,3 +122,20 @@ def test_read_more_less_text(driver):
     clothes_page = ClothesPage(driver)
     read_less = clothes_page.read_more.click()
     assert clothes_page.read_more.text != read_less
+
+
+def test_plus_size_clothes(driver):
+    home_page = HomePage(driver)
+    home_page.open()
+    # home_page.all_cookies.click()
+    home_page.cart_button.click()
+    cart_page = CartPage(driver)
+    driver.execute_script("window.scrollTo(0, 300)")
+    sleep(2)
+    # WebDriverWait(driver, 10).until(ec.element_to_be_clickable(cart_page.shop_new_in))
+    cart_page.shop_new_in.click()
+    clothes_page = ClothesPage(driver)
+    clothes_page.shop_by_fit.click()
+    clothes_page.plus_size.click()
+    assert clothes_page.jeans.is_displayed()
+    assert clothes_page.underwear.is_displayed()

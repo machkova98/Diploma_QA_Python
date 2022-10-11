@@ -11,6 +11,10 @@ showing_number = (By.CSS_SELECTOR, 'span[class="b-load_progress-value"]')
 sort = (By.ID, 'plp-sort-desktop')
 brush = (By.LINK_TEXT, 'Nasty Gal Beauty Crease Brush')
 read_more = (By.CSS_SELECTOR, 'span[class="b-more-button_text"]')
+shop_by_fit = (By.ID, 'searchRefineBarAccordionItemBtn-shop-by-fit')
+plus_size = (By.ID, 'refinementAttributesListItem-shop-by-fit-plus_size')
+underwear = (By.CSS_SELECTOR, 'a[data-pid="BGG01090"]')
+jeans = (By.CSS_SELECTOR, 'a[data-pid="AGG14092"]')
 
 
 class ClothesPage(HomePage):
@@ -55,15 +59,18 @@ class ClothesPage(HomePage):
         return self.find_element(read_more)
 
     @property
-    def cardigan(self):
-        return self.find_element(cardigan)
+    def shop_by_fit(self):
+        return self.find_element(shop_by_fit)
 
     @property
-    def add_to_cart_cardigan(self):
-        return self.find_element(add_to_bag_cardigan)
+    def plus_size(self):
+        return self.find_element(plus_size)
 
     @property
-    def view_bag(self):
-        return self.find_element(view_bag)
+    def underwear(self):
+        return self.find_element(underwear)
 
+    @property
+    def jeans(self):
+        return self.find_element(jeans)
 

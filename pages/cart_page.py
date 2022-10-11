@@ -7,9 +7,9 @@ blazer_and_skirt = (By.XPATH, '//*[@class="b-top_category-picture_image"]')
 shop_new_in = (By.CSS_SELECTOR, 'p[class="b-top_category-copy"]')
 cardigan_in_cart = (By.CSS_SELECTOR, 'tbody[class="l-cart_product-body"]')
 edit_in_cart = (By.CSS_SELECTOR, 'button[title="Edit"]')
-select_rose = (By.CSS_SELECTOR, 'select[id="attribute-ae292f5cf8840ab098f4fb0343-color"')
+select_bigger = (By.CSS_SELECTOR, 'select[id="attribute-f5b66cf39ae8622dda69044229-size"')
 update_button = (By.CSS_SELECTOR, 'button[class="b-product_update-button_update b-button m-small"]')
-rose_color = (By.CSS_SELECTOR, 'span[data-tau-colour-id="rose"]')
+rose_color = (By.CSS_SELECTOR, 'span[data-tau-size-id="50"]')
 checkout = (By.XPATH, '//*[@id="maincontent"]/div/div[1]/div/div/div[4]/aside/div[1]/section[2]/div[1]/a')
 secure = (By.CSS_SELECTOR, 'h1[class="l-checkout_login-title b-checkout_title m-centered"]')
 remove_button = (By.CSS_SELECTOR, 'button[title="Remove"]')
@@ -42,15 +42,15 @@ class CartPage(HomePage):
         return self.find_element(edit_in_cart)
 
     @property
-    def select_rose_cardigan(self):
-        return self.find_element(select_rose)
+    def select_bigger_cardigan(self):
+        return self.find_element(select_bigger)
 
     @property
     def update_cart(self):
         return self.find_element(update_button)
 
     @property
-    def rose_color(self):
+    def cardigan_size(self):
         return self.find_element(rose_color)
 
     @property

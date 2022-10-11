@@ -10,8 +10,8 @@ search_button = (By.CSS_SELECTOR, 'span[class="b-search_toggle-icon"]')
 search_field = (By.CSS_SELECTOR, 'input[id="header-search-input"]')
 no_result = (By.CSS_SELECTOR, 'p[class="b-header_search-noresult_msg"]')
 jeans_result = (By.CSS_SELECTOR, 'span[class="b-header_search-count"]')
-cardigan = (By.CSS_SELECTOR, 'a[data-pid="AGG45805-3"]')
-choose_size_s = (By.CSS_SELECTOR, 'button[id="variation-swatch-button-1-30"]')
+cardigan = (By.CSS_SELECTOR, 'a[data-pid="AGG08275-1"]')
+choose_size_s = (By.CSS_SELECTOR, 'button[id="variation-swatch-button-1-68"]')
 add_to_bag = (By.CSS_SELECTOR, 'button[data-id="addToCart"]')
 view_bag = (By.CSS_SELECTOR, 'a[class="b-button m-outline b-minicart-button"]')
 add_to_wishlist = (By.CSS_SELECTOR, 'i[class="b-wishlist_button-icon"]')
@@ -24,8 +24,14 @@ remove = (By.CSS_SELECTOR, 'a[class="b-wishlist_tile-remove"]')
 dialog = (By.XPATH, '//div[@aria-labelledby="Delete item?"]')
 delete_button = (By.CSS_SELECTOR, 'button[data-tau="remove_item_confirmation_confirm"]')
 empty_text = (By.CSS_SELECTOR, 'p[class="b-wishlist-empty_text"]')
-black_shoes = (By.CSS_SELECTOR, 'a[data-pid ="AGG09904"]')
+black_shoes = (By.CSS_SELECTOR, 'a[data-pid ="AGG44076"]')
 shoes_size = (By.CSS_SELECTOR, 'button[aria-label="38"]')
+shoes_to_add_to_wl = (By.XPATH, '//*[@id="product-grid"]/div[2]/section[1]/div[2]/div[1]/div[1]/button[2]/i')
+shoes_to_add_to_wl_2 = (By.XPATH, '//*[@id="product-grid"]/div[2]/section[2]/div[2]/div[1]/div[1]/button[2]/i')
+amount_of_shoes = (By.CSS_SELECTOR, 'span[class="b-load_progress-value"]')
+discount_color = (By.CSS_SELECTOR, 'span[class="b-price-item m-new"]')
+button_four = (By. CSS_SELECTOR, 'button[data-value="4"]')
+images_decrease = (By.XPATH, '//div[@class="l-plp_grid"]')
 
 
 class HomePage(BasePage):
@@ -131,3 +137,27 @@ class HomePage(BasePage):
     @property
     def shoes_size(self):
         return self.find_element(shoes_size)
+
+    @property
+    def shoes_add_to_wl(self):
+        return self.find_element(shoes_to_add_to_wl)
+
+    @property
+    def shoes_add_to_wl_2(self):
+        return self.find_element(shoes_to_add_to_wl_2)
+
+    @property
+    def amount_of_shoes(self):
+        return self.find_element(amount_of_shoes)
+
+    @property
+    def discount_color(self):
+        return self.find_element(discount_color)
+
+    @property
+    def button_four(self):
+        return self.find_element(button_four)
+
+    @property
+    def images_decrease(self):
+        return self.find_element(images_decrease)
