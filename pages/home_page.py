@@ -23,7 +23,7 @@ button_select_tap = (By.CSS_SELECTOR, 'span[data-ref="container"]')
 remove = (By.CSS_SELECTOR, 'a[class="b-wishlist_tile-remove"]')
 dialog = (By.XPATH, '//div[@aria-labelledby="Delete item?"]')
 delete_button = (By.CSS_SELECTOR, 'button[data-tau="remove_item_confirmation_confirm"]')
-empty_text = (By.CSS_SELECTOR, 'p[class="b-wishlist-empty_text"]')
+empty_text = (By.CSS_SELECTOR, 'span[class="b-load_progress-description"]')
 black_shoes = (By.CSS_SELECTOR, 'a[data-pid ="AGG44076"]')
 shoes_size = (By.CSS_SELECTOR, 'button[aria-label="38"]')
 shoes_to_add_to_wl = (By.XPATH, '//*[@id="product-grid"]/div[2]/section[1]/div[2]/div[1]/div[1]/button[2]/i')
@@ -32,6 +32,8 @@ amount_of_shoes = (By.CSS_SELECTOR, 'span[class="b-load_progress-value"]')
 discount_color = (By.CSS_SELECTOR, 'span[class="b-price-item m-new"]')
 button_four = (By. CSS_SELECTOR, 'button[data-value="4"]')
 images_decrease = (By.XPATH, '//div[@class="l-plp_grid"]')
+delete_from_the_cart = (By.CSS_SELECTOR, 'button[class="b-minicart_product-remove_btn"]')
+open_clothes = (By.CSS_SELECTOR, 'a[class="b-button m-link b-promo_content-link"]')
 
 
 class HomePage(BasePage):
@@ -127,7 +129,7 @@ class HomePage(BasePage):
         return self.find_element(delete_button)
 
     @property
-    def empty_text_in_wishlist(self):
+    def show_items_in_wishlist(self):
         return self.find_element(empty_text)
 
     @property
@@ -161,3 +163,11 @@ class HomePage(BasePage):
     @property
     def images_decrease(self):
         return self.find_element(images_decrease)
+
+    @property
+    def delete_from_the_cart(self):
+        return self.find_element(delete_from_the_cart)
+
+    @property
+    def open_clothes(self):
+        return self.find_element(open_clothes)

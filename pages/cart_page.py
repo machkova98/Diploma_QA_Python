@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 
 cart_empty = (By.CSS_SELECTOR, 'h2[class="b-cart_empty-title"]')
 blazer_and_skirt = (By.XPATH, '//*[@class="b-top_category-picture_image"]')
-shop_new_in = (By.CSS_SELECTOR, 'p[class="b-top_category-copy"]')
+shop_new_in = (By.CSS_SELECTOR, 'figure[class="b-top_category-figure"]')
 cardigan_in_cart = (By.CSS_SELECTOR, 'tbody[class="l-cart_product-body"]')
 edit_in_cart = (By.CSS_SELECTOR, 'button[title="Edit"]')
 select_bigger = (By.CSS_SELECTOR, 'select[id="attribute-f5b66cf39ae8622dda69044229-size"')
